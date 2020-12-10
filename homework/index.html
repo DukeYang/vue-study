@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyVue</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>Vue组件化</h1>
+    <p>{{counter}}</p>
+  </div>
+<script src="./yvue.js"></script>
+<script>
+  const app = new YVue({
+    el: "#app",
+    data: {
+       counter: 1
+    }
+  })
+
+  setInterval(()=>{
+    app.num++
+  }, 1000)
+</script>
+</body>
+
+</html>
