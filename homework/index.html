@@ -11,20 +11,37 @@
   <div id="app">
     <h1>Vue组件化</h1>
     <p>{{counter}}</p>
+    <comps></comps>
   </div>
-<script src="./yvue.js"></script>
-<script>
-  const app = new YVue({
-    el: "#app",
-    data: {
-       counter: 1
-    }
-  })
+  <script src="./yvue.js"></script>
+  <script>
 
-  setInterval(()=>{
-    app.num++
-  }, 1000)
-</script>
+    YVue.component('comps', {
+      data: {
+        text: 'my comps'
+      },
+      render(h) {
+        return h('div', null, this.text)
+      }
+    })
+
+    const app = new YVue({
+      el: "#app",
+      data: {
+        counter: 1
+      },
+      render(h) {
+        return h('div', {
+          id: 'app', class:'test', title:this.counter
+        }, [h('p', {style: 'background-color:red'}, this.counter + '')])
+      }
+    })
+
+    setInterval(() => {
+      app.counter++
+    }, 1000)
+
+  </script>
 </body>
 
 </html>
