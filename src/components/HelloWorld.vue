@@ -2,9 +2,9 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <!-- 组件通信 -->
-    <Communication></Communication>
+    <!-- <Communication></Communication> -->
     <!-- 表单 -->
-    <!-- <FormExample></FormExample> -->
+    <FormExample></FormExample>
     <!-- 插槽 -->
     <!-- <SlotExample></SlotExample> -->
     <!-- 递归 -->
@@ -14,7 +14,7 @@
 
 <script>
 import Communication from '@/components/communication';
-import FormExample from '@/components/form';
+import FormExample from 'comps/form';
 import SlotExample from '@/components/slots';
 import TreeExample from '@/components/recursion';
 
